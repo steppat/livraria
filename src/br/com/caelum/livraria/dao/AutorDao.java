@@ -18,7 +18,6 @@ public class AutorDao {
 	}
 
 	public Autor buscaPelaId(Integer autorId) {
-
 		Autor autor = this.banco.buscaPelaId(autorId);
 		return autor;
 	}

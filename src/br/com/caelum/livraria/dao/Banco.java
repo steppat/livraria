@@ -5,31 +5,18 @@ import java.util.List;
 
 import br.com.caelum.livraria.modelo.Autor;
 import br.com.caelum.livraria.modelo.Livro;
+import br.com.caelum.livraria.modelo.Usuario;
 
 public class Banco {
 	
 	public static List<Livro> livros = new ArrayList<>();
 	public static List<Autor> autores = new ArrayList<>();
+	public static List<Usuario> usuarios = new ArrayList<>();
 	
 	private static int chave = 1;
 	
 	static {
-		Autor silveira = new Autor(chave++, "Paulo Silveira");
-		Autor cordeiro = new Autor(chave++, "Gilliard Cordeiro");
-		Autor coelho = new Autor(chave++, "Hébert Coelho ");
-		
-		autores.add(silveira);
-		autores.add(cordeiro);
-		autores.add(coelho);
-		
-		livros.add(new Livro("Java 8 prático",silveira));
-		livros.add(new Livro("Lógica de Programação",silveira));
-
-		livros.add(new Livro("CDI: Integre as depedências",cordeiro));
-		livros.add(new Livro("JSF e JPA",cordeiro));
-
-		livros.add(new Livro("JPA Efficaz",coelho));
-		livros.add(new Livro("JSF Efficaz",coelho));
+		inicializaBanco();
 	}
 
 	public void save(Livro livro) {
@@ -58,6 +45,37 @@ public class Banco {
 			}
 		}
 		return null;
+	}
+	
+	public Usuario buscaPeloNome(String nome) {
+		for (Usuario usuario : usuarios) {
+			if(usuario.getLogin().equals(nome)) {
+				return usuario;
+			}
+		}
+		
+		return null;
+	}
+	
+	private static void inicializaBanco() {
+		Autor silveira = new Autor(chave++, "Paulo Silveira");
+		Autor cordeiro = new Autor(chave++, "Gilliard Cordeiro");
+		Autor coelho = new Autor(chave++, "Hébert Coelho ");
+		
+		autores.add(silveira);
+		autores.add(cordeiro);
+		autores.add(coelho);
+		
+		livros.add(new Livro("Java 8 prático",silveira));
+		livros.add(new Livro("Lógica de Programação",silveira));
+
+		livros.add(new Livro("CDI: Integre as dependências",cordeiro));
+		livros.add(new Livro("JSF e JPA",cordeiro));
+
+		livros.add(new Livro("JPA Efficaz",coelho));
+		livros.add(new Livro("JSF Efficaz",coelho));
+		
+		usuarios.add(new Usuario("admin", "pass"));
 	}
 
 }

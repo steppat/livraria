@@ -9,7 +9,6 @@ public class LivroDao {
 
 	private Banco banco = new Banco();
 	
-
 	public void salva(Livro livro) {
 		banco.save(livro);
 	}

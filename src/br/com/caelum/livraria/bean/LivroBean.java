@@ -19,8 +19,10 @@ public class LivroBean {
 	private AutorDao autorDao = new AutorDao();
 
 	public void cadastra() {
+		
 		Autor autor = this.autorDao.buscaPelaId(this.autorId);
 		this.livro.setAutor(autor);
+		
 		this.livroDao.salva(livro);
 		
 		this.livro = new Livro();

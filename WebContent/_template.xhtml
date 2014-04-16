@@ -12,9 +12,21 @@
 	<h:head>
 		<title>Livraria</title>
     </h:head>
+    
     <h:body>
 
     	<p:growl id="mensagens"/> 
+    	
+    	<h:form id="menu" rendered="#{usuarioLogadoBean.usuario != null}">
+	    	<p:tabMenu activeIndex="#{menuBean.index}">  
+	    		<p:menuitem value="Livros" action="#{menuBean.paginaLivros}"/>
+	    		<p:menuitem value="Autores" action="#{menuBean.paginaAutores}"/>
+	    		<p:menuitem value="Logout" action="#{loginBean.efetuaLogout}"/>
+			</p:tabMenu>
+    	</h:form>
+    	
+    	<br />
+    	
     	<ui:insert name="corpo" />
     	
    	</h:body>

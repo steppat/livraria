@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
 encoding//src/br/com/caelum/livraria/dao/Banco.java=UTF-8
+encoding//src/br/com/caelum/livraria/login/Autorizador.java=UTF-8
+encoding//src/br/com/caelum/livraria/login/LoginBean.java=UTF-8
