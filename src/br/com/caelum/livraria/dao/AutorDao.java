@@ -2,14 +2,16 @@ package br.com.caelum.livraria.dao;
 
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 
 import br.com.caelum.livraria.modelo.Autor;
 
 @Stateless
 public class AutorDao {
 
-	private Banco banco = new Banco();
+	@EJB Banco banco;
 
 	public void salva(Autor autor) {
 		banco.save(autor);

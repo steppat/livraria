@@ -3,16 +3,29 @@ package br.com.caelum.livraria.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.ejb.Singleton;
+import javax.ejb.TimerService;
+
 import br.com.caelum.livraria.modelo.Autor;
 import br.com.caelum.livraria.modelo.Livro;
 import br.com.caelum.livraria.modelo.Usuario;
 
+@Singleton
 public class Banco {
 	
 	public static List<Livro> livros = new ArrayList<>();
 	public static List<Autor> autores = new ArrayList<>();
 	public static List<Usuario> usuarios = new ArrayList<>();
 	
+	@Resource TimerService ts;
+	
+	
+	void posConstrucao() {
+		System.out.println("criando Bancooo");
+		System.out.println(ts);
+	}
+
 	private static int chave = 1;
 	
 	static {
