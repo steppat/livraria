@@ -2,16 +2,20 @@ package br.com.caelum.livraria.bean;
 
 import java.util.List;
 
-import javax.enterprise.inject.Model;
+import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
 import br.com.caelum.livraria.dao.AutorDao;
 import br.com.caelum.livraria.modelo.Autor;
 
-@Model
+@Named
+@RequestScoped
 public class AutorBean {
 	
 	private Autor autor = new Autor();
-	private AutorDao dao = new AutorDao();
+	
+	@EJB AutorDao dao;
 	
 	public Autor getAutor() {
 		return autor;

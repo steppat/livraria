@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.login;
+package br.com.caelum.livraria.util;
 
 import javax.faces.application.NavigationHandler;
 import javax.faces.context.FacesContext;
@@ -12,7 +12,7 @@ public class Autorizador implements PhaseListener{
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	UsuarioLogadoBean usuarioLogado;
+	UsuarioLogado usuarioLogado;
 
 	public void afterPhase(PhaseEvent event) {
 
@@ -29,7 +29,7 @@ public class Autorizador implements PhaseListener{
 					.getNavigationHandler();
 			handler.handleNavigation(context, null, "login?faces-redirect=true");
 			
-			//efetua renderização da tela
+			//efetua renderiza????o da tela
 			context.renderResponse();
 		}
 	}	

@@ -17,7 +17,7 @@
 
     	<p:growl id="mensagens"/> 
     	
-    	<h:form id="menu" rendered="#{usuarioLogadoBean.usuario != null}">
+    	<h:form id="menu" rendered="#{usuarioLogado.usuario != null}">
 	    	<p:tabMenu activeIndex="#{menuBean.index}">  
 	    		<p:menuitem value="Livros" action="#{menuBean.paginaLivros}"/>
 	    		<p:menuitem value="Autores" action="#{menuBean.paginaAutores}"/>

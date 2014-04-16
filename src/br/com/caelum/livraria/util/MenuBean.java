@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.bean;
+package br.com.caelum.livraria.util;
 
 import java.io.Serializable;
 

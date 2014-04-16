@@ -2,21 +2,24 @@ package br.com.caelum.livraria.bean;
 
 import java.util.List;
 
-import javax.enterprise.inject.Model;
+import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
 import br.com.caelum.livraria.dao.AutorDao;
 import br.com.caelum.livraria.dao.LivroDao;
 import br.com.caelum.livraria.modelo.Autor;
 import br.com.caelum.livraria.modelo.Livro;
 
-@Model
+@Named
+@RequestScoped
 public class LivroBean {
 	
 	private Livro livro = new Livro();
 	private Integer autorId;
 	
-	private LivroDao livroDao = new LivroDao();
-	private AutorDao autorDao = new AutorDao();
+	@EJB LivroDao livroDao;
+	@EJB AutorDao autorDao;
 
 	public void cadastra() {
 		

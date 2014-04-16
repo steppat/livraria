@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.login;
+package br.com.caelum.livraria.util;
 
 import java.io.Serializable;
 
@@ -8,7 +8,7 @@ import javax.inject.Named;
 import br.com.caelum.livraria.modelo.Usuario;
 
 @Named @SessionScoped
-public class UsuarioLogadoBean implements Serializable {
+public class UsuarioLogado implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
