@@ -3,6 +3,7 @@ package br.com.caelum.livraria.modelo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Livro {
@@ -11,6 +12,8 @@ public class Livro {
 	@GeneratedValue
 	private Integer id;
 	private String titulo;
+	
+	@ManyToOne
 	private Autor autor;
 	
 	public Livro() {
