@@ -5,9 +5,8 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
       
-      	<h:head />
-      
-		<h:body>
+ <ui:composition template="_template.xhtml">
+	<ui:define name="corpo">
 			<h:form id="f" style="width: 40%;  margin: 0 auto;" >
 				<p:panelGrid columns="2">
 				
@@ -25,5 +24,6 @@
 					</f:facet>
 				</p:panelGrid>
 			</h:form>
-   		</h:body>
+	</ui:define>
+</ui:composition>
 </html>
