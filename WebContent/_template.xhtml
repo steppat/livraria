@@ -13,9 +13,9 @@
 		<title>Livraria</title>
     </h:head>
     
-    <h:body>
+    <h:body >
 
-    	<p:growl id="mensagens"/> 
+    	<p:growl id="mensagens" autoUpdate="true"/> 
     	
     	<h:form id="menu" rendered="#{usuarioLogado.usuario != null}">
 	    	<p:tabMenu activeIndex="#{menuBean.index}">  
